@@ -1,5 +1,10 @@
 # WAV conversion ----------------------------------------------------------
 ## Convert string to WAV object
+library(tuneR)
+library(purrr)
+library(magrittr)
+library(dplyr)
+
 str_to_wav <- function(str) {
   str %>% 
     strsplit('') %>% 
