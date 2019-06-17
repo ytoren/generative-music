@@ -20,7 +20,7 @@ setWavPlayer('/usr/bin/afplay')
 
 ## Note for Bach's prelude
 prelude="tAJHJAJAtAJHJAJAtCKJKCKCtCKJKCKCtEKJKEKEtEKJKEKEtFJHJFJFtFJHJFJF"
-n <- nchar(prelude)
+n <- str_length(prelude)
 
 ## freq <- function(n) {440*(2^(1/12))^n}
 
@@ -54,7 +54,7 @@ results <- run_evolution(population, crossover_rate, mutation_rate, maxiter)
 
 # Analysis ----------------------------------------------------------------
 results %>%
-  ggplot(aes(x = iteration, y = fitness/ n)) %>%
+  ggplot(aes(x = iteration, y = fitness/ str_length(prelude))) %>%
   +geom_line() +ylab('% correct notes')
 
 correct_frac <- 0.70

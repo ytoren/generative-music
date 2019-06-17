@@ -9,20 +9,20 @@ score_fitness <- function(x) {
 cross_over <- function(p1, p2, crossover_point) {
   paste0(
     substr(p1, 1, crossover_point), 
-    substr(p2, crossover_point + 1, nchar(p2))
+    substr(p2, crossover_point + 1, str_length(p2))
   )
 }
 
 
 # Mutation ----------------------------------------------------------------
 mutate_genes_str <- function(x, genes = frequencies$code) {
-  for (j in 1:n) if(runif(1) < mutation_rate) substr(x,j,j) = sample(genes,1)
+  for (j in 1:str_length(x)) if(runif(1) < mutation_rate) substr(x,j,j) = sample(genes,1)
   return(x)
 }
 
 mutate_genes_vec <- function(x, genes = frequencies$code) {
-  new_genes <- sample(x = genes, size = nchar(x), replace = TRUE)
-  replace_filter <- runif(n = n) < mutation_rate
+  new_genes <- sample(x = genes, size = str_length(x), replace = TRUE)
+  replace_filter <- runif(n = str_length(x)) < mutation_rate
   
   x <- strsplit(x, '')
   ## Replace values 
