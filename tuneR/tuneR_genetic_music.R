@@ -40,7 +40,12 @@ source('tuneR/genetic_algo.R')
 
 # RUN ---------------------------------------------------------------------
 ## Initial ppulation
-population <- generate_initial_population(popsize = popsize, seed = seed)
+population <- generate_initial_population(
+  target_notes = prelude,
+  popsize = popsize, 
+  genes = frequencies$code,
+  seed = seed
+)
 
 ## Comapre
 ## Bach's melody 
@@ -49,7 +54,14 @@ prelude %>% str_to_wav() %>% play()
 population[min(which.max(fitness))] %>% str_to_wav() %>% play()
 
 ## Run genetic algo
-results <- run_evolution(population, crossover_rate, mutation_rate, maxiter)
+results <- run_evolution(
+  population = population, 
+  target_notes = prelude, 
+  genes = frequencies$code,
+  crossover_rate = crossover_rate, 
+  mutation_rate = mutation_rate, 
+  maxiter = maxiter
+)
 
 
 # Analysis ----------------------------------------------------------------
