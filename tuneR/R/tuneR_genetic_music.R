@@ -16,7 +16,7 @@ mutation_rate <- 0.01 # Probability of mutation per locus
 seed <- 1234
 
 ## From: https://stackoverflow.com/a/27135335
-setWavPlayer('/usr/bin/afplay')
+# setWavPlayer('/usr/bin/afplay')
 
 ## Note for Bach's prelude
 prelude="tAJHJAJAtAJHJAJAtCKJKCKCtCKJKCKCtEKJKEKEtEKJKEKEtFJHJFJFtFJHJFJF"
