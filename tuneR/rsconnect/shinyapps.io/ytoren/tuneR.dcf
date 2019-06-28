@@ -1,0 +1,13 @@
+name: tuneR
+title: tuneR
+username:
+account: ytoren
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 995231
+bundleId: 2185254
+url: https://ytoren.shinyapps.io/tuneR/
+when: 1561711816.60371
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: R/tuneR_genetic_music.R
